@@ -1,4 +1,4 @@
-(define-module (my-packages miqp-flow)
+(define-module (multichip packages barvinok)
   #:use-module (guix packages)
   #:use-module (guix download)
   #:use-module (guix git-download)
@@ -39,4 +39,4 @@ Ehrhart quasi-polynomials and vector partition
 functions. Alternatively, a generalized Ehrhart series can be
 constructed as well.")
    (home-page "https://barvinok.sourceforge.io/")
-   (license gpl3+)))
+   (license #f)))

@@ -1,4 +1,4 @@
-(define-module (multichip architecture)
+(define-module (multichip packages architecture)
   #:use-module (guix packages)
   #:use-module (guix download)
   #:use-module (guix git-download)
@@ -41,4 +41,4 @@
    (home-page "blah")
    (synopsis "blah")
    (description "blah")
-   (license gpl2)))
+   (license #f)))
