@@ -15,7 +15,9 @@
   #:use-module (gnu packages commencement)
   #:use-module (gnu packages perl)
   #:use-module (gnu packages autotools)
-  #:use-module (gnu packages gawk))
+  #:use-module (gnu packages gawk)
+  #:export (timeloop)
+  )
 
 (define-public timeloop
   (package
