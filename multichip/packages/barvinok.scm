@@ -39,4 +39,4 @@ Ehrhart quasi-polynomials and vector partition
 functions. Alternatively, a generalized Ehrhart series can be
 constructed as well.")
    (home-page "https://barvinok.sourceforge.io/")
-   (license #f)))
+   (license gpl3+)))
