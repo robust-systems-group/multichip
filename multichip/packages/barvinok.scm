@@ -21,4 +21,4 @@
    (synopsis "barvinok is a library for counting the number of integer points in parametric and non-parametric polytopes.")
    (description "barvinok is a library for counting the number of integer points in parametric and non-parametric polytopes. For parametric polytopes an explicit function in the shape of a piece-wise step-polynomial is constructed. This is a generalization of both Ehrhart quasi-polynomials and vector partition functions. Alternatively, a generalized Ehrhart series can be constructed as well.")
    (home-page "https://barvinok.sourceforge.io/")
-   (license license:gpl3+)))
+   (license #f)))
