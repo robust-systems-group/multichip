@@ -1,4 +1,2 @@
 (channel
- (version 0)
- (directory "packages")
- (url "https://github.com/robust-systems-group/multichip.git"))
+ (version 0))
