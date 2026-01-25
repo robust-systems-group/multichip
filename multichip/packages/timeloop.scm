@@ -1,4 +1,5 @@
-(define-module (multichip packages architecture)
+(define-module (multichip packages timeloop)
+  #:use-module (multichip packages barvinok)
   #:use-module (guix packages)
   #:use-module (guix download)
   #:use-module (guix git-download)
@@ -42,3 +43,5 @@
    (synopsis "blah")
    (description "blah")
    (license #f)))
+
+timeloop
