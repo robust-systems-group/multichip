@@ -1,7 +1,10 @@
 (define-module (multichip packages annotate)
+  #:use-module (multichip packages timeloop)
   #:use-module (guix packages)
   #:use-module (guix git-download)
+  #:use-module (gnu packages graphviz)
   #:use-module (gnu packages python-build)
+  #:use-module (gnu packages machine-learning)
   #:use-module (guix git)
   #:use-module (guix build-system pyproject)
   #:use-module (guix licenses))
@@ -18,7 +21,8 @@
     '(#:phases
       (modify-phases %standard-phases
 		     (delete 'check))))
-   (inputs (list python-hatchling))
+   (inputs (list timeloop python-hatchling))
+   (propagated-inputs (list python-pytorch python-pygraphviz))
    (home-page "blah")
    (synopsis "blah")
    (description "blah")

@@ -17,6 +17,32 @@
   #:use-module (gnu packages autotools)
   #:use-module (gnu packages gawk))
 
+(define-public python-timeloop
+  (package
+   (name "python-timeloop")
+   (version "0.1.0")
+   (source
+    (origin
+     (method git-fetch)
+     (uri (git-reference
+           (url "https://github.com/Accelergy-Project/timeloop-python.git")
+           (commit "91ae9e485ebbfc69e367e9e872d5b9228103cb6d")))
+     (file-name (git-file-name name version))
+     (sha256
+      (base32 "16qx7qdjk289y0j62cgmm8miqcmnz6cy3w5gx3k98qjvp482j83p"))))
+   (build-system pyproject-build-system)
+   (arguments
+    '(#:phases
+      (modify-phases %standard-phases
+		     (delete 'check)
+		     (delete 'sanity-check))))
+   (propagated-inputs (list 
+   (native-inputs (list python-setuptools python-wheel))
+   (home-page "")
+   (synopsis "")
+   (description "")
+   (license #f)))
+
 (define-public timeloop
   (package
    (name "timeloop")
