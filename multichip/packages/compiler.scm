@@ -26,29 +26,17 @@
       (modify-phases %standard-phases
 		     (delete 'check))))
    (propagated-inputs (list python-hatchling
-		 python-matplotlib
-		 python-numpy
-		 python-networkx
-		 python-scipy
-		 python-tomli
-		 python-tomli-w
-		 python-leidenalg
-		 python-tabulate
-		 python-cdlib
-		 python-matplotlib-label-lines))
+			    python-matplotlib
+			    python-numpy
+			    python-networkx
+			    python-scipy
+			    python-tomli
+			    python-tomli-w
+			    python-leidenalg
+			    python-tabulate
+			    python-cdlib
+			    python-matplotlib-label-lines))
    (home-page "blah")
    (synopsis "blah")
    (description "blah")
    (license #f)))
-
-
-    ;; 'gurobipy==13.0.0',
-    ;; 'matplotlib',
-    ;; 'numpy',
-    ;; 'networkx',
-    ;; 'scipy',
-    ;; 'cdlib',
-    ;; 'leidenalg',
-    ;; 'matplotlib-label-lines',
-    ;; 'tabulate',
-    ;; 'tomli_w',
