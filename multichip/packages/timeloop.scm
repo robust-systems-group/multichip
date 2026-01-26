@@ -20,22 +20,24 @@
 (define-public timeloop
   (package
    (name "timeloop")
-   (version (git-version "0.26.6" "1" "28dc9bb1c31c951ff258c2c8293f9152ee74c690"))
+   (version (git-version "0.1.0" "1" "9708ad207844a4cb6ce022af2805082df60375cc"))
    (source (origin
 	    (method git-fetch)
 	    (uri (git-reference
 		  (url "https://github.com/robust-systems-group/timeloop.git")
-		  (commit "28dc9bb1c31c951ff258c2c8293f9152ee74c690")))
+		  (commit "9708ad207844a4cb6ce022af2805082df60375cc")))
 	    (file-name (git-file-name name version))
-	    (sha256 (base32 "1p42z36yrvf9i7midf6bj08czniqd1v4kqcxlmn75qyxxy72r10q"))))
+	    (sha256 (base32 "1w66xqkvlrmfm62jd2jsv2454xcm6ns6r61pf6sm0yficc64c0kq"))))
    (build-system scons-build-system)
    (arguments
     '(#:phases
       (modify-phases %standard-phases
-		     (add-after 'unpack 'my-new-phase
-				(lambda _
-				  (copy-recursively "pat-public/src/pat" "src/pat") #t))
-		     (delete 'check))
+		     (add-after 'unpack 'load-default-pat
+				(lambda _ (copy-recursively "pat-public/src/pat" "src/pat") #t))
+		     (delete 'check)
+		     ;; (add-after 'unpack 'set-LDFLAGS
+		     ;; 		(lambda _ (setenv "LDFLAGS" (string-append "-Wl,-rpath=" (assoc-ref %outputs "out") "/lib")) #t))
+		     )
       #:scons-flags (list "--with-isl" "--accelergy" (string-append "--prefix="  (assoc-ref %outputs "out")))
       ))
    (inputs (list yaml-cpp libconfig barvinok ntl boost ncurses/tinfo gmp))
@@ -43,3 +45,13 @@
    (synopsis "blah")
    (description "blah")
    (license #f)))
+
+;; (add-after 'unpack 'set-LDFLAGS
+;;           (lambda _
+;;             (setenv "LDFLAGS"
+;;                     (string-append "-Wl,-rpath=" #$output "/lib"))))
+
+;; (add-after 'unpack 'set-LDFLAGS
+;; 		      		(lambda _ (setenv "LDFLAGS" (string-append "-Wl,-rpath=" #$outputs "/lib")) #t))
+;; 		     )
+
