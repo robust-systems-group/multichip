@@ -35,8 +35,6 @@
 		     (add-after 'unpack 'load-default-pat
 				(lambda _ (copy-recursively "pat-public/src/pat" "src/pat") #t))
 		     (delete 'check)
-		     ;; (add-after 'unpack 'set-LDFLAGS
-		     ;; 		(lambda _ (setenv "LDFLAGS" (string-append "-Wl,-rpath=" (assoc-ref %outputs "out") "/lib")) #t))
 		     )
       #:scons-flags (list "--with-isl" "--accelergy" (string-append "--prefix="  (assoc-ref %outputs "out")))
       ))
@@ -45,13 +43,4 @@
    (synopsis "blah")
    (description "blah")
    (license #f)))
-
-;; (add-after 'unpack 'set-LDFLAGS
-;;           (lambda _
-;;             (setenv "LDFLAGS"
-;;                     (string-append "-Wl,-rpath=" #$output "/lib"))))
-
-;; (add-after 'unpack 'set-LDFLAGS
-;; 		      		(lambda _ (setenv "LDFLAGS" (string-append "-Wl,-rpath=" #$outputs "/lib")) #t))
-;; 		     )
 
