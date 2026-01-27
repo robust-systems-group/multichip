@@ -39,7 +39,7 @@
       (base32 "1arz9097vf4v90hmwvw4b6aypbcjcs9qzbdfaympdwpvj6km0ncs"))))
    (build-system pyproject-build-system)
    (inputs (list timeloop boost libconfig yaml-cpp isl))
-   (propagated-inputs (list timeloop))
+   (propagated-inputs (list timeloop python-psutil))
    (native-inputs (list python-setuptools python-wheel cmake-minimal cmake-shared pybind11))
    (arguments
     '(#:phases
