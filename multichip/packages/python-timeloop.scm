@@ -36,7 +36,7 @@
 	   (recursive? #t)))
      (file-name (git-file-name name version))
      (sha256
-      (base32 "0x9kj74qc2dcl9xkwrblrcdxng68qhfsiibr6gr9dcfnslwiy4z3"))))
+      (base32 "0r587h8iik7k0mvyi57iv9qfsn8ccs5fxvfnn01fw7b990na3vli"))))
    (build-system pyproject-build-system)
    (inputs (list timeloop boost libconfig yaml-cpp isl))
    (propagated-inputs (list timeloop python-psutil))
