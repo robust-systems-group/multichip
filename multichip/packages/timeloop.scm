@@ -3,10 +3,14 @@
   #:use-module (guix packages)
   #:use-module (guix download)
   #:use-module (guix git-download)
+  #:use-module (guix build-system python)
+  #:use-module (guix build-system pyproject)
   #:use-module (guix build-system gnu)
   #:use-module (guix build-system scons)
   #:use-module (gnu packages algebra)
   #:use-module (guix licenses)
+  #:use-module (gnu packages python-build)
+  #:use-module (gnu packages cmake)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages ncurses)
   #:use-module (gnu packages textutils)
@@ -17,43 +21,18 @@
   #:use-module (gnu packages autotools)
   #:use-module (gnu packages gawk))
 
-(define-public python-timeloop
-  (package
-   (name "python-timeloop")
-   (version "0.1.0")
-   (source
-    (origin
-     (method git-fetch)
-     (uri (git-reference
-           (url "https://github.com/Accelergy-Project/timeloop-python.git")
-           (commit "91ae9e485ebbfc69e367e9e872d5b9228103cb6d")))
-     (file-name (git-file-name name version))
-     (sha256
-      (base32 "16qx7qdjk289y0j62cgmm8miqcmnz6cy3w5gx3k98qjvp482j83p"))))
-   (build-system pyproject-build-system)
-   (arguments
-    '(#:phases
-      (modify-phases %standard-phases
-		     (delete 'check)
-		     (delete 'sanity-check))))
-   (propagated-inputs (list 
-   (native-inputs (list python-setuptools python-wheel))
-   (home-page "")
-   (synopsis "")
-   (description "")
-   (license #f)))
 
 (define-public timeloop
   (package
    (name "timeloop")
-   (version (git-version "0.1.0" "1" "9708ad207844a4cb6ce022af2805082df60375cc"))
+   (version "0.0.1")
    (source (origin
 	    (method git-fetch)
 	    (uri (git-reference
 		  (url "https://github.com/robust-systems-group/timeloop.git")
-		  (commit "9708ad207844a4cb6ce022af2805082df60375cc")))
+		  (commit "afdf7c169cda031bbae5713a817afdc2a417486b")))
 	    (file-name (git-file-name name version))
-	    (sha256 (base32 "1w66xqkvlrmfm62jd2jsv2454xcm6ns6r61pf6sm0yficc64c0kq"))))
+	    (sha256 (base32 "17m4cb071lx6jzzgcdzd7fdx0030scj2481zaxpi50lvcwy1wrsm"))))
    (build-system scons-build-system)
    (arguments
     '(#:phases
@@ -69,4 +48,5 @@
    (synopsis "blah")
    (description "blah")
    (license #f)))
+
 
