@@ -32,11 +32,11 @@
      (method git-fetch)
      (uri (git-reference
            (url "https://github.com/robust-systems-group/timeloop-python.git")
-           (commit "91ae9e485ebbfc69e367e9e872d5b9228103cb6d")
+           (commit "f28b17f39219216e462fb82a608e8f0c4ebeb3bc")
 	   (recursive? #t)))
      (file-name (git-file-name name version))
      (sha256
-      (base32 "1arz9097vf4v90hmwvw4b6aypbcjcs9qzbdfaympdwpvj6km0ncs"))))
+      (base32 "0x9kj74qc2dcl9xkwrblrcdxng68qhfsiibr6gr9dcfnslwiy4z3"))))
    (build-system pyproject-build-system)
    (inputs (list timeloop boost libconfig yaml-cpp isl))
    (propagated-inputs (list timeloop python-psutil))
