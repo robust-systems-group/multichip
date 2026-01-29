@@ -39,6 +39,8 @@
       (modify-phases %standard-phases
 		     (add-after 'unpack 'load-default-pat
 				(lambda _ (copy-recursively "pat-public/src/pat" "src/pat") #t))
+		     (add-after 'unpack 'env-timeloop
+				(lambda _ (setenv "TIMELOOP_INCLUDE_PATH" (assoc-ref %build-inputs "timeloop")) #t))
 		     (delete 'check)
 		     )
       #:scons-flags (list "--with-isl" "--accelergy" (string-append "--prefix="  (assoc-ref %outputs "out")))

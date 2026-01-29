@@ -46,8 +46,8 @@
       (modify-phases %standard-phases
 		     (delete 'check)
 		     (delete 'sanity-check)
-		     (add-after 'unpack 'env-timeloop
-				(lambda _ (setenv "TIMELOOP_INCLUDE_PATH" (assoc-ref %build-inputs "timeloop")) #t)))))
+		     ;; (add-after 'unpack 'env-timeloop
+		     ;; 		(lambda _ (setenv "TIMELOOP_INCLUDE_PATH" (assoc-ref %build-inputs "timeloop")) #t)))))
    (home-page "")
    (synopsis "")
    (description "")
