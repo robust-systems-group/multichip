@@ -19,20 +19,25 @@
 	    (uri (git-reference
 		  (url "https://github.com/C0L/taco.git")
 		  (commit "0fd4ee7cb475fbb3e848ce262213029f2123f298")
-                  (recursive? #t)))
+		  (recursive? #t)))
 	    (file-name (git-file-name name version))
 	    (sha256 (base32 "1dmprwrrid8ffkwxbscqfhxl0sfgpwaa0y8hbf051psk0ygs66bd")))
-    )
+	   )
    (build-system cmake-build-system)
    (arguments
     '(#:configure-flags (list "-DCMAKE_BUILD_TYPE=Release" "-DPYTHON=ON")
-      #:tests? #f))
+			#:tests? #f))
    (native-inputs (list python))
-   (propagated-inputs (list python-numpy python-scipy gcc-toolchain))
-   (search-paths
+   (native-search-paths
     (list (search-path-specification
-           (variable "PYTHONPATH")
-           (files '("lib")))))
+	   (variable "PYTHONPATH")
+	   (files (list "lib/")))
+	  (search-path-specification
+	   (variable "TACO_CC")
+	   (files (list "bin/")))
+	  ))
+   ;; https://guix.gnu.org/manual/1.5.0/en/html_node/Search-Paths.html
+   (propagated-inputs (list python-numpy python-scipy gcc-toolchain))
    (home-page "blah")
    (synopsis "blah")
    (description "blah")
