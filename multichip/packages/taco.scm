@@ -34,7 +34,7 @@
 	   (files (list "lib/")))
 	  (search-path-specification
 	   (variable "TACO_CC")
-	   (files (list "bin/")))
+	   (files (list "bin/gcc")))
 	  ))
    ;; https://guix.gnu.org/manual/1.5.0/en/html_node/Search-Paths.html
    (propagated-inputs (list python-numpy python-scipy gcc-toolchain))
