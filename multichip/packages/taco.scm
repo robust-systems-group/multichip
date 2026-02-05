@@ -25,14 +25,17 @@
     )
    (build-system cmake-build-system)
    (arguments
-    '(#:configure-flags (list "-DCMAKE_BUILD_TYPE=Release" "-DPYTHON=ON" "DTACO_CC=gcc")
+    '(#:configure-flags (list "-DCMAKE_BUILD_TYPE=Release" "-DPYTHON=ON")
       #:tests? #f))
    (native-inputs (list python))
    (propagated-inputs (list python-numpy python-scipy gcc-toolchain))
    (native-search-paths
     (list (search-path-specification
            (variable "PYTHONPATH")
-           (files (list "lib")))))
+           (files (list "lib")))
+	  (search-path-specification
+           (variable "TASO_CC")
+           (files (list "bin/gcc")))))
    (home-page "blah")
    (synopsis "blah")
    (description "blah")
