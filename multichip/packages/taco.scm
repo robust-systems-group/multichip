@@ -32,10 +32,10 @@
    (search-paths
     (list (search-path-specification
            (variable "PYTHONPATH")
-           (files (list "lib")))
+           (files '("lib")))
 	  (search-path-specification
            (variable "TACO_CC")
-           (files (list "bin/gcc")))))
+           (files '("bin/gcc")))))
    (home-page "blah")
    (synopsis "blah")
    (description "blah")
