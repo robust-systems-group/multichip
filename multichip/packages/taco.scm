@@ -34,7 +34,7 @@
            (variable "PYTHONPATH")
            (files (list "lib")))
 	  (search-path-specification
-           (variable "TASO_CC")
+           (variable "TACO_CC")
            (files (list "bin/gcc")))))
    (home-page "blah")
    (synopsis "blah")
