@@ -29,7 +29,7 @@
       #:tests? #f))
    (native-inputs (list python))
    (propagated-inputs (list python-numpy python-scipy gcc-toolchain))
-   (native-search-paths
+   (search-paths
     (list (search-path-specification
            (variable "PYTHONPATH")
            (files (list "lib")))
