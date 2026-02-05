@@ -2,6 +2,7 @@
   #:use-module (guix packages)
   #:use-module (gnu packages python)
   #:use-module (guix download)
+  #:use-module (gnu packages commencement)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-science)
   #:use-module (guix git-download)
@@ -24,11 +25,10 @@
     )
    (build-system cmake-build-system)
    (arguments
-    '(#:configure-flags (list "-DCMAKE_BUILD_TYPE=Release" "-DPYTHON=ON")
+    '(#:configure-flags (list "-DCMAKE_BUILD_TYPE=Release" "-DPYTHON=ON" "DTACO_CC=gcc")
       #:tests? #f))
-    ;; '(#:configure-flags (list "-DCMAKE_BUILD_TYPE=Release" "-DPYTHON=ON")))
    (native-inputs (list python))
-   (propagated-inputs (list python-numpy python-scipy))
+   (propagated-inputs (list python-numpy python-scipy gcc-toolchain))
    (native-search-paths
     (list (search-path-specification
            (variable "PYTHONPATH")
