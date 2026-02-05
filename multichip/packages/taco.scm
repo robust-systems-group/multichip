@@ -27,7 +27,8 @@
     '(#:configure-flags (list "-DCMAKE_BUILD_TYPE=Release" "-DPYTHON=ON")
       #:tests? #f))
     ;; '(#:configure-flags (list "-DCMAKE_BUILD_TYPE=Release" "-DPYTHON=ON")))
-   (native-inputs (list python-3.11 python-numpy python-scipy))
+   (native-inputs (list python))
+   (propagated-inputs (list python-numpy python-scipy))
    (native-search-paths
     (list (search-path-specification
            (variable "PYTHONPATH")
