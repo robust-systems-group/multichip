@@ -12,7 +12,7 @@
 (define-public taco
   (package
    (name "taco")
-   (version "0.1.0")
+   (version "0.1.1")
    (source (origin
 	    (method git-fetch)
 	    (uri (git-reference
@@ -30,7 +30,7 @@
    (native-inputs (list python-3.11 python-numpy python-scipy))
    (native-search-paths
     (list (search-path-specification
-           (variable "GUIX_PYTHONPATH")
+           (variable "PYTHONPATH")
            (files (list "lib")))))
    (home-page "blah")
    (synopsis "blah")
